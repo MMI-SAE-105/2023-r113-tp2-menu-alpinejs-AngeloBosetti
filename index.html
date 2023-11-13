@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test menu</title>
     <script defer src="https://unpkg.com/alpinejs"></script>
+    <style>
+      .menu {
+        position: fixed; /* reste en place lors du défilement */
+        top: 0;
+        
+      }
+    </style>
   </head>
   <body>
     <!-- https://emmet.io/ -->
@@ -15,7 +22,7 @@
        @click="menuIsOpen = ! menuIsOpen"
         class="header_menuBtn">menu</button>
       <h1>Test de menu</h1>
-      <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+      <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="m">
         <ul>
           <li><a href="#">item 1</a></li>
           <li><a href="#">item 2</a></li>
