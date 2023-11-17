@@ -1,3 +1,3 @@
 - nom :Bosetti
 - prénom :Angelo
-- URL publique du site : https://precious-pastelito-9b1833.netlify.app/
+- URL publique du site : 
