@@ -1,11 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" x-data="{menuIsOpen: false}" :class="{noscroll:menuIsOpen,}">
+  
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    </title>
+    <script defer src="https://unpkg.com/alpinejs"></script>
+    <style>
+      .menu {
+        position: fixed; /* reste en place lors du défilement */
+        top: 0; /* fixe le menu en haut de la page */
+        left: 0;
+        width: 100vw; /* largeur de la fenetre */
+        height: 100vh; /*hauteur de la fenetre */
+        background: #fff; /*couleur du fond */
+        display: grid; /* grille pour centrer*/
+        place-content: center; /* alignement au centre (V et H)*/
+      }
+      .header_menuBtn {
+        position: relative; /*pour apliquer le z-index*/
+        z-index: 10; /* pour que le bouton soit au dessus du menu*/
+      }
+      .noscroll_body{
+        overflow: hidden;
+      }
+      
+    </style>
+    </head>
+    <body>
+      <!-- https://emmet.io/ -->
+      <!-- header>h1{Test de menu} -->
+      <header>
+        <button aria-controls="mainNav"
+         @click="menuIsOpen = ! menuIsOpen"
+          class="header_menuBtn">menu</button>
+          <h1>Test de menu</h1>    
+        <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+          <ul>
+            <li><a href="../index.html"><img src="../public/icones/home.svg" alt="home_icone">Acceuil</a></li>
+            <li><a href="../cats/index.html"><img src="../public/icones/cat-broken.svg" alt="cat_icone">Chat</a></li>
+  
+          </ul>
+        </nav>
