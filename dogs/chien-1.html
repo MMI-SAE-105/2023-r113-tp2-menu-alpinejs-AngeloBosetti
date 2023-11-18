@@ -1,11 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" x-data="{menuIsOpen: false}" :class="{noscroll:menuIsOpen,}">
+  
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chien 1</title>
-</head>
-<body>
-    
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    </title>
+    <script defer src="https://unpkg.com/alpinejs"></script>
+    <style>
+      .menu {
+        position: fixed; /* reste en place lors du défilement */
+        top: 0; /* fixe le menu en haut de la page */
+        left: 0;
+        width: 100vw; /* largeur de la fenetre */
+        height: 100vh; /*hauteur de la fenetre */
+        background: #fff; /*couleur du fond */
+        display: grid; /* grille pour centrer*/
+        place-content: center; /* alignement au centre (V et H)*/
+      }
+      .header_menuBtn {
+        position: relative; /*pour apliquer le z-index*/
+        z-index: 10; /* pour que le bouton soit au dessus du menu*/
+      }
+      .noscroll_body{
+        overflow: hidden;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <!-- https://emmet.io/ -->
+    <!-- header>h1{Test de menu} -->
+    <header>
+      <button aria-controls="mainNav"
+       @click="menuIsOpen = ! menuIsOpen"
+        class="header_menuBtn">menu</button>
+        <h1>Le Mastiff </h1>    
+      <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+        <ul>
+          <li><a href="../index.html"><img src="../public/icones/home.svg" alt="home_icone"> Acceuil</a></li>
+          <li><a href="../dogs/index.html"><img src="../public/icones/dog.svg" alt="dog_icone">Chien</a></li>
+          </ul>
+      </nav>
+      <p>
+        Le Mastiff, majestueuse force tranquille parmi les races canines, incarne la combinaison rare de la puissance imposante et de la douce loyauté. Avec ses traits massifs, une tête imposante, et un corps robuste, le Mastiff impressionne par sa stature imposante.
+      </p>
+ <p>
+    Originaire de l'Antiquité, le Mastiff a été élevé pour protéger et défendre, faisant de lui un gardien naturel. Cependant, derrière cette apparence intimidante se cache un cœur doux et affectueux. Les Mastiffs sont réputés pour leur tempérament calme, leur attachement profond envers leur famille et leur tolérance, ce qui en fait d'excellents compagnons.
+ </p>
+ <p>
+    Que ce soit en tant que chien de garde vigilant ou en tant que membre aimant d'une famille, le Mastiff incarne la juxtaposition harmonieuse de la force et de la gentillesse. Son allure imposante dissimule un compagnon dévoué, prêt à offrir affection et protection à ceux qu'il considère comme les siens. Avec son charme doux et son caractère impressionnant, le Mastiff laisse une empreinte indélébile dans le cœur de ceux qui ont la chance de partager leur vie avec cette noble race canine. 
+ </p>
+ <img src="../public/image/1200px-10_yr_old_Mastiff.jpg" alt="">
+ <a href="./chien-2.html"><img src="../public/icones/dog.svg" alt="dog_icone"></a>
 </body>
 </html>
