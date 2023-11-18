@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr" x-data="{menuIsOpen: false}" :class="{noscroll:menuIsOpen,}">
+  
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    </title>
+    <script defer src="https://unpkg.com/alpinejs"></script>
+    <style>
+      .menu {
+        position: fixed; /* reste en place lors du défilement */
+        top: 0; /* fixe le menu en haut de la page */
+        left: 0;
+        width: 100vw; /* largeur de la fenetre */
+        height: 100vh; /*hauteur de la fenetre */
+        background: #fff; /*couleur du fond */
+        display: grid; /* grille pour centrer*/
+        place-content: center; /* alignement au centre (V et H)*/
+      }
+      .header_menuBtn {
+        position: relative; /*pour apliquer le z-index*/
+        z-index: 10; /* pour que le bouton soit au dessus du menu*/
+      }
+      .noscroll_body{
+        overflow: hidden;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <!-- https://emmet.io/ -->
+    <!-- header>h1{Test de menu} -->
+    <header>
+      <button aria-controls="mainNav"
+       @click="menuIsOpen = ! menuIsOpen"
+        class="header_menuBtn">menu</button>
+        <h1>Cavalier King Charles Spaniels </h1>    
+      <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+        <ul>
+          <li><a href="../index.html"><img src="../public/icones/home.svg" alt="home_icone"> Acceuil</a></li>
+          <li><a href="../dogs/index.html"><img src="../public/icones/dog.svg" alt="dog_icone">Acceuil Chien</a></li>
+          </ul>
+      </nav>
+      <p>
+        Les Cavalier King Charles Spaniels, petites boules de peluche à la personnalité enjouée, charment les cœurs avec leur élégance et leur nature affectueuse. Dotés de grands yeux expressifs et d'oreilles frémissantes, ces adorables compagnons sont une incarnation de la grâce et de la gentillesse canine.</p>
+ <p>
+    Originaire de la noblesse britannique, le Cavalier King Charles Spaniel a été choyé comme un compagnon de choix des rois et des reines. Aujourd'hui, ils continuent d'apporter une touche royale à nos vies, bien que leur véritable trésor réside dans leur nature aimante et leur désir constant de plaire.
+ </p>
+ <p>Ces petits chiens, dotés d'une énergie modérée et d'un tempérament équilibré, se révèlent être d'excellents compagnons pour les familles, les personnes seules ou les personnes âgées. Leur taille compacte les rend adaptés à la vie en appartement, tandis que leur amour inconditionnel les transforme en amis fidèles.
+
+ </p>
+ <p>
+    Que ce soit à l'affût de papillons au parc ou en train de se pelotonner tendrement sur le canapé, les Cavalier King Charles Spaniels apportent une joie constante à ceux qui ont la chance de les avoir comme compagnons. Leur douceur, leur sociabilité et leur élégance en font une race de chien qui laisse une empreinte indélébile dans le cœur de tous ceux qui croisent leur chemin. 
+ </p>
+ <img src="../public/image/GettyImages-dog.webp" alt="Cavalier King Charles Spaniels ">
+ <a href="./chien-2.html"><img src="../public/icones/dog.svg" alt="dog_icone">Mastiff</a>
+</body>
+</html>
