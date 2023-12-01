@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr" x-data="{menuIsOpen: false}" :class="{noscroll:menuIsOpen,}">
+  
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    </title>
+    <script defer src="https://unpkg.com/alpinejs"></script>
+    <style>
+      .menu {
+        position: fixed; /* reste en place lors du défilement */
+        top: 0; /* fixe le menu en haut de la page */
+        left: 0;
+        width: 100vw; /* largeur de la fenetre */
+        height: 100vh; /*hauteur de la fenetre */
+        background: #fff; /*couleur du fond */
+        display: grid; /* grille pour centrer*/
+        place-content: center; /* alignement au centre (V et H)*/
+      }
+      .header_menuBtn {
+        position: relative; /*pour apliquer le z-index*/
+        z-index: 10; /* pour que le bouton soit au dessus du menu*/
+      }
+      .noscroll_body{
+        overflow: hidden;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <!-- https://emmet.io/ -->
+    <!-- header>h1{Test de menu} -->
+    <header>
+      <button aria-controls="mainNav"
+       @click="menuIsOpen = ! menuIsOpen"
+        class="header_menuBtn">menu</button>
+        <h1>Grumpy cat</h1>    
+      <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+        <ul>
+          <li><a href="../index.html"><img src="../public/icones/home.svg" alt="home_icone"> Acceuil</a></li>
+          <li><a href="./index.html"><img src="../public/icones/cat-broken.svg" alt="cat_icone">Acceuil Chat </a></li>
+          </ul>
+      </nav>
+      <p>
+        Grumpy Cat, une célébrité féline née sur les réseaux sociaux, a conquis le cœur du monde entier avec son expression faciale constamment boudeuse. Son visage unique, marqué par une moue perpétuelle, a donné naissance à un phénomène Internet empreint d'humour et de sarcasme.    
+      </p>
+ <p>
+    Grumpy Cat, de son vrai nom Tardar Sauce, a su transformer son air grognon en une source infinie de rires et de mèmes. Son regard désapprobateur a fait d'elle une icône de l'attitude détachée et nonchalante. Les internautes ont rapidement adopté son image pour exprimer toutes sortes d'émotions sarcastiques, de la désapprobation ironique à la frustration comique. 
+ </p>
+ <p>
+    Au-delà de sa célébrité en ligne, Grumpy Cat est devenue une figure emblématique de la culture pop, apparaissant dans des émissions de télévision, des livres, et même sur des produits dérivés. Son charme grincheux a réussi à captiver un public mondial, prouvant que parfois, même les chats grognons peuvent apporter une dose bienvenue de légèreté et de rire à nos vies. Bien que Grumpy Cat ne soit plus parmi nous, son héritage persiste, rappelant à tous que parfois, un peu de mauvaise humeur peut être la clé d'un sourire éclatant.
+ </p>
+ <img src="../public/image/427356_120814-ap-grumpy-cat-3-img.jpg" alt="">
+ <a href="./chat-1.html"><img src="../public/icones/cat-broken.svg" alt="cat_icone">Chat noir</a>
+</body>
+</html>

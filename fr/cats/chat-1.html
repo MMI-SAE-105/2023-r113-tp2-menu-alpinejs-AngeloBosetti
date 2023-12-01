@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr" x-data="{menuIsOpen: false}" :class="{noscroll:menuIsOpen,}">
+  
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    </title>
+    <script defer src="https://unpkg.com/alpinejs"></script>
+    <style>
+      .menu {
+        position: fixed; /* reste en place lors du défilement */
+        top: 0; /* fixe le menu en haut de la page */
+        left: 0;
+        width: 100vw; /* largeur de la fenetre */
+        height: 100vh; /*hauteur de la fenetre */
+        background: #fff; /*couleur du fond */
+        display: grid; /* grille pour centrer*/
+        place-content: center; /* alignement au centre (V et H)*/
+      }
+      .header_menuBtn {
+        position: relative; /*pour apliquer le z-index*/
+        z-index: 10; /* pour que le bouton soit au dessus du menu*/
+      }
+      .noscroll_body{
+        overflow: hidden;
+      }
+      
+    </style>
+    </head>
+    <body>
+      <!-- https://emmet.io/ -->
+      <!-- header>h1{Test de menu} -->
+      <header>
+        <button aria-controls="mainNav"
+         @click="menuIsOpen = ! menuIsOpen"
+          class="header_menuBtn">menu</button>
+          <h1>Chat noir </h1>    
+        <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+          <ul>
+            <li><a href="../index.html"><img src="../public/icones/home.svg" alt="home_icone">Acceuil</a></li>
+            <li><a href="../cats/index.html"><img src="../public/icones/cat-broken.svg" alt="cat_icone">Acceuil Chat</a></li>
+          </ul>
+        </nav>
+        <p>Les chats noirs, créatures mystérieuses aux yeux d'ambre étincelants, portent en eux une aura envoûtante qui suscite fascination et superstition depuis des siècles. Associés à la magie et au surnaturel dans de nombreuses cultures, ces félins élégants ont souvent été entourés de légendes et de croyances populaires.
+
+            
+             </p>
+        <p>
+            Certains les considèrent comme des porteurs de malchance, associant leur pelage sombre à des présages sinistres. Pourtant, d'autres voient en eux des gardiens de la bonne fortune, des protecteurs de l'invisible. Les mythes entourant les chats noirs varient, mais leur charme persiste.
+            
+        </p>
+        <p>Au-delà des superstitions, ces créatures félines incarneraient également l'esprit indépendant et mystérieux du monde félin. Leurs yeux perçants semblent contenir des secrets anciens, et leur agilité confère une élégance féline à chacun de leurs mouvements.
+            
+            Ainsi, que l'on perçoive les chats noirs comme des créatures porte-bonheur ou des mystères ambulants, leur présence dans nos vies éveille toujours une curiosité teintée de respect et d'admiration. Les chats noirs demeurent, à travers les âges, des compagnons énigmatiques, capturant notre imagination et éveillant le côté magique qui réside en chaque félin au pelage d'ébène.
+       </p>
+        <img src="../public/image/black-cat-kitchen-rug.jpg" alt="">
+        <a href="./chat-2.html"><img src="../public/icones/cat-broken.svg" alt="cat_icone"> Grumpy cat</a>
+    </body>
+</html>
